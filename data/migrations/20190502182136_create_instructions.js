@@ -1,14 +1,9 @@
 
 exports.up = function(knex, Promise) {
     return knex.schema
-    .createTable('recipes_ingredients', tbl => {
+    .createTable('instructions', tbl => {
         // the tracks table must be created before this table is created
         tbl.increments();
-
-        
-        tbl
-        .float('quality')
-        .notNullable()
 
         tbl
             .integer('recipe_id')
@@ -34,5 +29,5 @@ exports.up = function(knex, Promise) {
 
 exports.down = function(knex, Promise) {
     return knex.schema
-    .dropTableIfExists('recipes_ingredients')
+    .dropTableIfExists('instructions')
 };
