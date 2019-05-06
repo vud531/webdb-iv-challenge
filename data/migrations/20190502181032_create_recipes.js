@@ -11,11 +11,6 @@ exports.up = function(knex, Promise) {
         .unique();
 
         tbl
-        .string('instructions', 225)
-        // .notNullable()
-        // .unique();
-
-        tbl
           .integer('dish_id')
           .unsigned()
           .notNullable()
@@ -23,7 +18,6 @@ exports.up = function(knex, Promise) {
           .inTable('dishes')
           .onDelete('RESTRICT')
           .onUpdate('CASCADE');
-  
       });
 };
 

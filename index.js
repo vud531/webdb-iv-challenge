@@ -1,13 +1,15 @@
 const express = require('express')
 // const helmet = require('helmet')
-// const cohorts = require('./routes/cohortsRoute')
-// const students = require('./routes/studentsRoute')
+const dishes = require('./routes/dish')
+const ingredients = require('./routes/ingredient')
+const recipes = require('./routes/recipe')
 
 const server = express()
 server.use(express.json())
 
-// server.use('/api/cohorts', cohorts)
-// server.use('/api/students', students)
+server.use('/api/dishes', dishes)
+server.use('/api/ingredients', ingredients)
+server.use('/api/recipes', recipes)
 
 
 server.use((req, res, next) => {
